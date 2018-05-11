@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthProvider } from '../../providers/auth/auth';
-import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the UserServiceProvider provider.
@@ -12,15 +11,11 @@ import { Storage } from '@ionic/storage';
 @Injectable()
 export class UserService {
 
-  constructor(public http: HttpClient, public auth: AuthProvider, public storage: Storage) {
+  constructor(public http: HttpClient, public auth: AuthProvider) {
     console.log('Hello UserServiceProvider Provider');
   }
-  getdata(device) {
-    this.auth.storage.get('uid').then(value=>{
-      console.log(value);
-    }).catch(error=>{
-      console.log(error);
-    });
-    return this.http.get('https://boiling-earth-33302.herokuapp.com/getdata?device=' + device + '&results=1');
+  
+  getdata(device,uid) {
+    return this.http.get('https://boiling-earth-33302.herokuapp.com/getdata?device=' + device + '&results=1&uid=' + uid);
   }
 }
