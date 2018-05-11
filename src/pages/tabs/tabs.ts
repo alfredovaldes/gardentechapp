@@ -7,6 +7,7 @@ import { TermometroPage } from '../termometro/termometro';
 @Component({
   templateUrl: 'tabs.html'
 })
+
 export class TabsPage {
 
   tab1Root = TermometroPage;

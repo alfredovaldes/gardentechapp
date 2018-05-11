@@ -14,6 +14,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../providers/user-service/user-service';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthProvider } from '../providers/auth/auth';
+import { LoginPage } from '../pages/login/login';
+import { LoginPageModule } from '../pages/login/login.module';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBxTJOJk1Y3_0qdGc5fRl3xrbT3PLIbWrI",
+  authDomain: "iotdbfs.firebaseapp.com",
+  databaseURL: "https://iotdbfs.firebaseio.com",
+  projectId: "iotdbfs",
+  storageBucket: "iotdbfs.appspot.com",
+  messagingSenderId: "160068016701"
+};
+
 
 @NgModule({
   declarations: [
@@ -22,12 +38,17 @@ import { UserService } from '../providers/user-service/user-service';
     ContactPage,
     HomePage,
     TabsPage,
-    TermometroPage
+    TermometroPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    LoginPageModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,8 +63,9 @@ import { UserService } from '../providers/user-service/user-service';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UserService
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    UserService,
+    AuthProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
