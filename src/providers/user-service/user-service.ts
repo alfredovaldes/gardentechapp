@@ -14,6 +14,6 @@ export class UserService {
     console.log('Hello UserServiceProvider Provider');
   }
 getdata(device){
-  return this.http.get('https://boiling-earth-33302.herokuapp.com/getdata?device='+device+'&results=10');
+  return this.http.get('https://boiling-earth-33302.herokuapp.com/getdata?device='+device+'&results=1');
 }
 }
