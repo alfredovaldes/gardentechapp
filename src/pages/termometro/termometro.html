@@ -19,36 +19,35 @@
   </ion-refresher>
   <ion-list>
     <ion-item *ngFor="let sensor of sensores">
-      <button ion-button full icon-left round icon-only (click)="temperatura(Temperatura);">
+      <button ion-button full icon-left round icon-only>
         Temperatura {{ sensor.temp }}
         <ion-icon name="thermometer"></ion-icon>
       </button>
       <div id="datoTemp"></div>
       <!-- Float the icon right -->
-      <button ion-button full color="secondary" round icon-only (click)="humedad(Humedad);">
+      <button ion-button full color="secondary" round icon-only>
         Humedad del aire {{ sensor.airHum }}
         <ion-icon name="water"></ion-icon>
       </button>
-      <button ion-button full color="danger" round icon-only (click)="intensidad(Intensidad);">
+      <button ion-button full color="danger" round icon-only>
         Intensidad luminosa {{ sensor.lux }}
         <ion-icon name="bulb"></ion-icon>
       </button>
-      <button ion-button full color="dark" round icon-only (click)="presion(Presiosn);">
+      <button ion-button full color="dark" round icon-only>
         Presión Barométrica {{ sensor.presBar }}
         <ion-icon name="pulse"></ion-icon>
       </button>
 
-      <button ion-button full color="danger" round icon-only (click)="co(Co);">
+      <button ion-button full color="danger" round icon-only>
         CO2 {{ sensor.gasCo2 }}
         <ion-icon name="barcode"></ion-icon>
       </button>
-      <button ion-button full round icon-only (click)="lluvia(Lluvia);">
+      <button ion-button full round icon-only>
         Lluvia {{ sensor.lluvia }}
         <ion-icon name="rainy"></ion-icon>
       </button>
-      <button ion-button full color="secondary" icon-right round icon-only (click)="humedadtierra(Humedadtierra);">
+      <button ion-button full color="secondary" icon-right round icon-only>
         Humedad de la tierra {{ sensor.gndHum }}
-
         <ion-icon name="leaf"></ion-icon>
       </button>
     </ion-item>
