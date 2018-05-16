@@ -23,6 +23,15 @@ import { LoginPageModule } from '../pages/login/login.module';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyBxTJOJk1Y3_0qdGc5fRl3xrbT3PLIbWrI",
+  authDomain: "iotdbfs.firebaseapp.com",
+  databaseURL: "https://iotdbfs.firebaseio.com",
+  projectId: "iotdbfs",
+  storageBucket: "iotdbfs.appspot.com",
+  messagingSenderId: "160068016701"
+};
+
 
 @NgModule({
   declarations: [
