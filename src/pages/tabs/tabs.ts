@@ -11,7 +11,7 @@ import { TermometroPage } from '../termometro/termometro';
 export class TabsPage {
 
   tab1Root = TermometroPage;
-  tab2Root = HomePage;
+  tab2Root = AboutPage;
   tab3Root = ContactPage;
 
   constructor() {

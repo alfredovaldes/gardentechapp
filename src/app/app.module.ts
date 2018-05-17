@@ -20,9 +20,18 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthProvider } from '../providers/auth/auth';
 import { LoginPage } from '../pages/login/login';
 import { LoginPageModule } from '../pages/login/login.module';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+var firebaseConfig = {
+  apiKey: "AIzaSyBxTJOJk1Y3_0qdGc5fRl3xrbT3PLIbWrI",
+  authDomain: "iotdbfs.firebaseapp.com",
+  databaseURL: "https://iotdbfs.firebaseio.com",
+  projectId: "iotdbfs",
+  storageBucket: "iotdbfs.appspot.com",
+  messagingSenderId: "160068016701"
+};
 
 @NgModule({
   declarations: [
@@ -37,6 +46,7 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
+    ChartsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

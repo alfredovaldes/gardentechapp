@@ -7,21 +7,30 @@
 </ion-header>
 
 <ion-content padding>
- <h4>Esta es la página para visualizar los siguientes parámetros</h4> 
-  <button ion-button>Gráficas</button>
-  <div class="row">
-    <div class="col-md-6">
-      <div style="display: block;">
-      <canvas baseChart width="300" height="400"
-                  [datasets]="lineChartData"
-                  [labels]="lineChartLabels"
-                  [options]="lineChartOptions"
-                  [colors]="lineChartColors"
-                  [legend]="lineChartLegend"
-                  [chartType]="lineChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
-      </div>
+  <ion-refresher (ionRefresh)="actualizar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="lineChartLabels.length > 1">
+    <div style="display: block" *ngIf="lineChartData">
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors1"
+        [legend]="lineChartLegend" [chartType]="lineChartType">
+      </canvas>
+    </div>
+    <div style="display: block" *ngIf="lineChartData2">
+      <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors2"
+        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="display: block" *ngIf="lineChartData3">
+      <canvas baseChart [datasets]="lineChartData3" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors3"
+        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="display: block" *ngIf="lineChartData4">
+      <canvas baseChart [datasets]="lineChartData4" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors4"
+        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="display: block" *ngIf="lineChartData5">
+      <canvas baseChart [datasets]="lineChartData5" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors5"
+        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
 </ion-content>

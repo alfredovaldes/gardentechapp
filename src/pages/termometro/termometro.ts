@@ -24,7 +24,7 @@ export class TermometroPage {
     this.storage.get('uid').then(value => {
       console.log(value)
 
-      this.userService.getdata("Jardin2", value)
+      this.userService.getdata("Jardin2", 1, value)
         .subscribe(
           (data) => {
             var resultados = [];
@@ -49,7 +49,7 @@ export class TermometroPage {
   }
   ionViewDidLoad() {
     this.storage.get('uid').then(value => {
-      this.userService.getdata("Jardin2", value)
+      this.userService.getdata("Jardin2", 1, value)
         .subscribe(
           (data) => {
             var resultados = [];
