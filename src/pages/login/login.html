@@ -55,9 +55,11 @@
           type="submit"
           color="secondary"
           block
+          [disabled]="!captchaPassed"
         >
           Dar de alta
         </button>
+        <re-captcha (resolved)="captchaResolved($event)" siteKey="6Lf2kFoUAAAAAFvw9OcPOrwDOBUU995TibB2DDpx"></re-captcha>
       </div>
     </form>
   </ion-list>

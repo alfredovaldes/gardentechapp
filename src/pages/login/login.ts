@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,  NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
-
+import { HttpClient } from '@angular/common/http';
 /**
  * Generated class for the LoginPage page.
  *
@@ -16,14 +16,33 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
   user = { email: '', password: '' };
-
+  private captchaPassed: boolean = false;
+  private captchaResponse: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController, private http: HttpClient, private zone: NgZone) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  captchaResolved(response: string): void {
+    this.zone.run(() => {
+      console.log(response)
+      this.captchaResponse = response;
+      let data = {
+        captchaResponse: this.captchaResponse
+    };     
+    this.http.post('https://boiling-earth-33302.herokuapp.com/test', data).subscribe(res => {
+        console.log(res);
+        if(res==1){
+          this.captchaPassed = true;
+        }
+        else{
+          this.captchaPassed = false;
+        }
+    });
+    });
+}
+
   signin() {
     this.auth.registerUser(this.user.email, this.user.password)
       .then((user) => {

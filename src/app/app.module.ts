@@ -23,6 +23,7 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { IonicStorageModule } from '@ionic/storage';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 var firebaseConfig = {
   apiKey: "AIzaSyBxTJOJk1Y3_0qdGc5fRl3xrbT3PLIbWrI",
@@ -51,6 +52,7 @@ var firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     LoginPageModule,
+    RecaptchaModule.forRoot(),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
