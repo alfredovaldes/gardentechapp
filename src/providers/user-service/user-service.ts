@@ -12,7 +12,6 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class UserService {
 
   constructor(public http: HttpClient, public auth: AuthProvider) {
-    console.log('Hello UserServiceProvider Provider');
   }
   
   getdata(device,results,uid) {

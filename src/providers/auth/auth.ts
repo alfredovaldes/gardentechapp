@@ -14,7 +14,6 @@ import { Storage } from '@ionic/storage';
 export class AuthProvider {
 
   constructor(private afAuth: AngularFireAuth,public storage: Storage) {
-    console.log('Hello AuthProvider Provider');
   }
 
   // Registro de usuario
@@ -29,7 +28,6 @@ export class AuthProvider {
           this.storage.set('uid', usuario.uid);
         }
         else {
-          console.log("empty user");
         } Promise.resolve(user)
       })
       .catch(err => Promise.reject(err))
@@ -44,7 +42,6 @@ export class AuthProvider {
           this.storage.set('uid', usuario.uid);
         }
         else {
-          console.log("empty user");
         }
         Promise.resolve(user)
       })

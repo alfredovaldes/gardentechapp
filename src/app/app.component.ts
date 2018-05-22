@@ -20,7 +20,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.auth.Session.subscribe(session => {
         if (session) {
-          console.log(TabsPage)
           this.rootPage = TabsPage;
         }
         else {

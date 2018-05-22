@@ -21,18 +21,14 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthProvider,
     public alertCtrl: AlertController, private http: HttpClient, private zone: NgZone) {
   }
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+
   captchaResolved(response: string): void {
     this.zone.run(() => {
-      console.log(response)
       this.captchaResponse = response;
       let data = {
         captchaResponse: this.captchaResponse
     };     
-    this.http.post('https://boiling-earth-33302.herokuapp.com/test', data).subscribe(res => {
-        console.log(res);
+    this.http.post('https://gardentech.herokuapp.com/test', data).subscribe(res => {
         if(res==1){
           this.captchaPassed = true;
         }

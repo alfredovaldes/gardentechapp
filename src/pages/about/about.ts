@@ -75,26 +75,17 @@ export class AboutPage {
             this.lineChartData3 = [{ data: this.lux, label: 'Intensidad Luminosa' }];
             this.lineChartData4 = [{ data: this.gasCo2, label: 'PPM CO2' }];
             this.lineChartData5 = [{ data: this.presBar, label: 'Presion Barometrica' }];
-            console.log(this.lineChartData);
-            console.log(this.lineChartData2);
-            console.log(this.lineChartData3);
-            console.log(this.lineChartData4);
-            console.log(this.lineChartData5);
-            console.log(this.lineChartLabels);
             this.sensores = true;
             refresher.complete();
           },
           (error) => {
-            console.error(error);
             refresher.complete();
           }
         )
     },
       (error) => {
-        console.error(error);
         refresher.complete();
       }).catch(error => {
-        console.log(error);
         refresher.complete();
       });
   }
@@ -137,23 +128,14 @@ export class AboutPage {
             this.lineChartData3 = [{ data: this.lux, label: 'Intensidad Luminosa' }];
             this.lineChartData4 = [{ data: this.gasCo2, label: 'PPM CO2' }];
             this.lineChartData5 = [{ data: this.presBar, label: 'Presion Barometrica' }];
-            console.log(this.lineChartData);
-            console.log(this.lineChartData2);
-            console.log(this.lineChartData3);
-            console.log(this.lineChartData4);
-            console.log(this.lineChartData5);
-            console.log(this.lineChartLabels);
             this.sensores = true;
           },
           (error) => {
-            console.error(error);
           }
         )
     },
       (error) => {
-        console.error(error);
       }).catch(error => {
-        console.log(error);
       });
   }
 
@@ -220,7 +202,7 @@ export class AboutPage {
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }];
   public lineChartColors5: Array<any> = [
-    { // MORADO
+    { // NARANJA
       backgroundColor: 'rgba(148,159,177,0.2)',
       borderColor: 'rgba(255,165,0,1)',
       pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -233,11 +215,9 @@ export class AboutPage {
 
   // events
   public chartClicked(e: any): void {
-    console.log(e);
   }
 
   public chartHovered(e: any): void {
-    console.log(e);
   }
   timeConverter(t) {
     var a = new Date(t * 1000);

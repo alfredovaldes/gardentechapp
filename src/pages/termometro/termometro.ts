@@ -22,8 +22,6 @@ export class TermometroPage {
   }
   actualizar(refresher) {
     this.storage.get('uid').then(value => {
-      console.log(value)
-
       this.userService.getdata("Jardin2", 1, value)
         .subscribe(
           (data) => {
@@ -35,16 +33,13 @@ export class TermometroPage {
             refresher.complete();
           },
           (error) => {
-            console.error(error);
             refresher.complete();
           }
         )
     },
       (error) => {
-        console.error(error);
         refresher.complete();
       }).catch(error => {
-        console.log(error);
       });
   }
   ionViewDidLoad() {
@@ -59,14 +54,11 @@ export class TermometroPage {
             this.sensores = resultados.reverse();
           },
           (error) => {
-            console.error(error);
           }
         )
     },
       (error) => {
-        console.error(error);
       }).catch(error => {
-        console.log(error);
       });
   }
 }

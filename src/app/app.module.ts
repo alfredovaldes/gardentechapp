@@ -7,8 +7,6 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { TermometroPage } from '../pages/termometro/termometro';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +22,7 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { TermometroPageModule } from '../pages/termometro/termometro.module';
 
 var firebaseConfig = {
   apiKey: "AIzaSyBxTJOJk1Y3_0qdGc5fRl3xrbT3PLIbWrI",
@@ -41,7 +40,6 @@ var firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    TermometroPage,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +51,8 @@ var firebaseConfig = {
     AngularFireAuthModule,
     LoginPageModule,
     RecaptchaModule.forRoot(),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    TermometroPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,9 +60,7 @@ var firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    TermometroPage
-
+    TabsPage
   ],
   providers: [
     StatusBar,
